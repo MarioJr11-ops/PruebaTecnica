@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/estilos.css" />
+    <script src="~/js/site.js"></script>
+
+
+</head>
+<body style="background-color: white; margin: 0px">
+
+
+    <div class="alert alert-success d-flex justify-content-center align-items-center @(TempData["MostrarAlertaUser"] != null && (bool)TempData["MostrarAlertaUser"] ? "" : "d-none")" role="alert">
+        ¡Bien Hecho! Nuevo Paciente añadido.
+    </div>
+
+
+
+
+    <div class="alert alert-warning d-flex justify-content-center align-items-center @(TempData["MostrarAlertaEspacios"] != null && (bool)TempData["MostrarAlertaEspacios"] ? "" : "d-none")" role="alert">
+        Por favor Digitar todos los campos.
+    </div>
+
+
+
+    <div class="d-flex justify-content-center align-items-center">
+
+        <h1> Crear Paciente</h1>
+
+
+    </div>
+
+
+
+    <br />
+
+    <br />
+
+    <div>
+
+
+        <form method="post">
+
+
+            <div class="container">
+
+
+
+                <div class="row">
+
+                    <div class="col">
+
+                        <input placeholder="Nombre" name="Name" class="form-control" />
+
+                    </div>
+
+                    <div class="col">
+                        <input placeholder="Apellido" name="LastName" class="form-control" />
+
+                    </div>
+
+
+                </div>
+
+                <br />
+                <br />
+
+
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group mb-0">
+                            <label class="invisible">.</label>
+                            <input placeholder="Identificacion" class="form-control" name="ID" />
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="form-group">
+                            <label class="control-label">Fecha Nacimiento</label>
+                            <input class="form-control" type="date" placeholder="Seleccione una fecha" name="FchaNacimiento" id="FchaNacimiento" />
+                        </div>
+                    </div>
+                </div>
+
+
+                <br />
+
+                <br />
+
+
+                <div class="row">
+
+
+
+                    <div class="col">
+                        <select class="form-select" name="Sexo" id="Sexo">
+                            <option value="">-- Seleccione Sexo --</option>
+                            <option value="M">Masculino</option>
+                            <option value="F">Femenino</option>
+                            <option value="O">Otros</option>
+                        </select>
+                    </div>
+
+
+
+
+                </div>
+
+
+
+                <br />
+
+                <br />
+
+
+
+                <div class="d-flex justify-content-center align-items-center ">
+                    <button asp-controller="Customers"
+                            asp-action="AddNewUser"
+                            class="btn btn-primary w-auto bg-custom" style="border-radius: 5px;">
+                        Nuevo Paciente
+                    </button>
+                </div>
+
+
+
+            </div>
+        </form>
+
+
+
+    </div>
+
+
+
+</body>
+</html>

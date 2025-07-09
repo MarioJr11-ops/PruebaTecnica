@@ -1,0 +1,70 @@
+﻿@model IEnumerable<AppPacientesWeb.Models.Pacientes>
+
+@{
+	ViewData["Title"] = "Ver Pacientes";
+}
+
+
+<div class="d-flex justify-content-center align-items-center">
+
+	<h1> Ver Pacientes</h1>
+
+
+</div>
+
+<br />
+<br />
+
+<div class="container" ">
+
+
+
+	<div class="row">
+
+
+		<div class="col-md-12">
+
+			<div class="table-responsive">
+
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Usuario</th>
+							<th>Nombre</th>
+							<th>Apellido</th>
+							<th>Identificación</th>
+							<th>Fecha Creación</th>
+						</tr>
+					</thead>
+					<tbody>
+						@foreach (var customer in Model)
+						{
+							<tr>
+								<td>@customer.nombre</td>
+								<td>@customer.apellido</td>
+								<td>@customer.fecha_nacimiento</td>
+								<td>@customer.numero_identificacion</td>
+								<td>@customer.genero</td>
+
+
+							</tr>
+						}
+					</tbody>
+				</table>
+
+			</div>
+
+
+
+		</div>
+
+
+
+	</div>
+
+
+
+
+</div>
+
+
